@@ -9,23 +9,24 @@ class Pair {
       a = i;
       b = j;
   }
-  public static Pair maxmin(int[] arr) {
-      int min = Integer.MAX_VALUE;
-      int max = Integer.MIN_VALUE;
-
-      for (int i : arr) {
-          if (i < min) {
-              min = i;
-          }
-          if (i > max) {
-              max = i;
-          }
-      }
-      return new Pair(min, max);
-  }
 }
 
 class ArrayExamples{
+  public static Pair maxmin(int[] arr) {
+    int min = Integer.MAX_VALUE;
+    int max = Integer.MIN_VALUE;
+
+    for (int i : arr) {
+        if (i < min) {
+            min = i;
+        }
+        if (i > max) {
+            max = i;
+        }
+    }
+    return new Pair(min, max);
+  }
+
   public static String joinWith(String[] str, String s) {
 		String result = "";
 		for (int i = 0; i < str.length; i++) {
@@ -106,7 +107,7 @@ class ProvidedArrayExamples {
 
   void testMaxmin(Tester t){
     int[] example = {4, 5, 2, 3, 1};
-    t.checkExpect(Pair.maxmin(example), new Pair(1, 5));
+    t.checkExpect(ArrayExamples.maxmin(example), new Pair(1, 5));
   }
 
   void testEarliest(Tester t){
